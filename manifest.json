@@ -1,0 +1,30 @@
+{
+  "name": "React Chrome Extension Modifier",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "An example of a Google Chrome Extension that works with a React App",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "optional_permissions": [
+  ],
+  "icons": {
+    "48" : "icon_48.png",
+    "128" : "icon_128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://skempin.github.io/*","http://skempin.github.io/*","https://skempin.github.io/*"],
+      "js": [
+        "jquery.min.js",
+        "react.development.js",
+        "react-dom.development.js",
+        "html-react-parser.min.js",
+        "textoverlay.js",
+        "inject.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
