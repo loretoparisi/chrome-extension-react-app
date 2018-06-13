@@ -2,7 +2,10 @@
 This is a chrome extension that uses React and ReactDOM to modify Components elements.
 
 ## How it Works
-The app uses the library [TextOverlay](https://github.com/yuku/textoverlay) to apply a overlay on a text node. The library has been modified to support Range matching (i.e. character positions) and React / ReacDOM integration. See [here](https://github.com/yuku/textoverlay/issues/20) for more info.
+The app uses the library [TextOverlay](https://github.com/yuku/textoverlay) to apply a overlay on a text node. The library has been modified to support Range matching (i.e. character positions) and React / ReacDOM integration. See [here](https://github.com/yuku/textoverlay/issues/20) for more info. It is using the [HTMLReactParser](https://github.com/remarkablemark/html-react-parser/issues) that transforms HTML to React Component in order to get the DOO element `outerHTML` contents and turn it into a React Element.
+
+## The Issue
+The code is able to bypass the React protections for Component modifications, but there is some issues in applying the changes correctly to the DOM elements. I have posted more info on [this](https://stackoverflow.com/questions/50813685/modify-react-app-in-chrome-extension) SF issue.
 
 ## Example
 This is an example of a Chrome Web app
